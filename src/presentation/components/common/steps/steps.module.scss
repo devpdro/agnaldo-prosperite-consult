@@ -1,0 +1,126 @@
+@import "../../../styles/themes/light.scss";
+@import "../../../styles/themes/mixins.scss";
+
+.section {
+  background-color: #fff;
+  width: 100%;
+  padding: 5rem 0;
+
+  @media (max-width: 768px) {
+    padding: 3rem 0;
+  }
+
+  .container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+    }
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    gap: 1rem;
+
+    .badge {
+      background-color: #eed56d;
+      color: #1c1c1c;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      font-family: "Satoshi", sans-serif;
+    }
+
+    .title {
+      color: #1c1c1c;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      font-family: "Satoshi", sans-serif;
+      max-width: 600px;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 1.125rem;
+      line-height: 1.6;
+      font-family: "Satoshi", sans-serif;
+      max-width: 500px;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      background-color: #f5f6fa;
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 300px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      &.large {
+        grid-column: span 2;
+
+        @media (max-width: 640px) {
+          grid-column: span 1;
+        }
+      }
+
+      .icon {
+        color: #1c1c1c;
+        margin-bottom: 2rem;
+
+        svg {
+          stroke-width: 1.5;
+        }
+      }
+
+      .content {
+        .cardTitle {
+          color: #1c1c1c;
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          font-family: "Satoshi", sans-serif;
+          letter-spacing: -0.02em;
+        }
+
+        .cardDesc {
+          color: #666;
+          font-size: 1rem;
+          line-height: 1.5;
+          font-family: "Satoshi", sans-serif;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,133 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import {
+  IconMenu2,
+  IconChevronDown,
+  IconBrandWhatsapp,
+} from "@tabler/icons-react";
+import { usePathname } from "next/navigation";
+
+import { NavMobile } from "src/presentation/components";
+import { IMAGE } from "src/presentation/assets";
+import { MENU } from "src/data/ui";
+
+import S from "./navbar.module.scss";
+import buttonStyles from "../../form/button/button.module.scss";
+
+interface MenuItem {
+  label: string;
+  link: string;
+  new?: string;
+}
+
+const Navbar = () => {
+  const [isSideMenuOpen, setSideMenu] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleSmoothScroll = (id: string) => (e: React.MouseEvent) => {
+    const isHome = pathname === "/";
+    if (isHome) {
+      e.preventDefault();
+      const el = document.getElementById(id.replace("#", ""));
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  return (
+    <nav className={`${S.navbar} ${isScrolled ? S.scrolled : ""}`}>
+      <div className={S.container}>
+        <section className={S["left-section"]}>
+          <Link href="/">
+            <Image
+              src={IMAGE.LOGO}
+              alt="Logo Prosperitte Consult"
+              className={S.logo}
+            />
+          </Link>
+          {isSideMenuOpen && <NavMobile closeMenu={() => setSideMenu(false)} />}
+        </section>
+
+        <div className={S["nav-items"]}>
+          {MENU.map((item, key) => (
+            <div key={key} className={S["nav-link"]}>
+              {item.link && item.link.startsWith("#") ? (
+                <a
+                  href={pathname === "/" ? item.link : `/${item.link}`}
+                  className={S["link-text"]}
+                  onClick={handleSmoothScroll(item.link)}
+                >
+                  <span>{item.label}</span>
+                  {item.children && (
+                    <IconChevronDown
+                      className={`${S["arrow-icon"]} ${S["rotate-180"]}`}
+                    />
+                  )}
+                </a>
+              ) : (
+                <Link href={item.link ?? "#"} className={S["link-text"]}>
+                  <span>{item.label}</span>
+                  {item.children && (
+                    <IconChevronDown
+                      className={`${S["arrow-icon"]} ${S["rotate-180"]}`}
+                    />
+                  )}
+                </Link>
+              )}
+              {item.children && (
+                <div className={S.dropdown}>
+                  {item.children.map((item: MenuItem, key: number) => (
+                    <Link
+                      key={key}
+                      href={item.link}
+                      className={S["dropdown-link"]}
+                    >
+                      <span className={S["link-label"]}>{item.label}</span>
+                      {item.new && <p className={S.new}>{item.new}</p>}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+          <a
+            href="https://api.whatsapp.com/send?phone=5519982435337&text=Ol%C3%A1!%20Vim%20do%20site%20da%20Prosp%C3%A9ritt%C3%A9%20Consult%20e%20tenho%20interesse%20em%20simular%20meu%20cons%C3%B3rcio.%20Poderiam%20me%20ajudar%20a%20encontrar%20a%20melhor%20op%C3%A7%C3%A3o?"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={S["cta-link"]}
+          >
+            <button
+              className={`${S["cta-button"]} ${buttonStyles.btn} ${buttonStyles.btn2}`}
+              tabIndex={-1}
+            >
+              <IconBrandWhatsapp size={18} />
+              <span>SIMULAR AGORA</span>
+            </button>
+          </a>
+        </div>
+
+        <IconMenu2
+          onClick={() => setSideMenu(true)}
+          className={S["menu-icon"]}
+        />
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
