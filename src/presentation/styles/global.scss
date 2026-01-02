@@ -38,8 +38,12 @@
   font-family: "Satoshi", sans-serif;
 }
 
-body {
+html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
   overflow-x: hidden;
   -webkit-user-select: none;
   -moz-user-select: none;

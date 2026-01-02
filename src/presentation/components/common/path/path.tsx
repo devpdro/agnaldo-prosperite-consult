@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import { IconCheck } from "@tabler/icons-react";
 import S from "./path.module.scss";
+import Highlighter from "src/presentation/components/common/highlighter/highlighter";
 
 const steps = [
   {
@@ -54,7 +55,11 @@ const Path = () => {
   return (
     <section className={S.pathSection}>
       <h2 className={S.title}>
-        Realize suas conquistas em <span className={S.bold}>3 passos</span>
+        Avance rumo às suas{" "}
+        <Highlighter action="underline" color="#eed56d">
+          metas
+        </Highlighter>{" "}
+        em <span className={S.bold}>3 etapas</span>
       </h2>
       <div className={S.stepsWrapper} ref={containerRef}>
         <div className={S.line} />

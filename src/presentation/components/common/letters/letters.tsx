@@ -4,22 +4,23 @@ import { useEffect, useState } from "react";
 
 import { IconArrowRight } from "@tabler/icons-react";
 import styles from "./letters.module.scss";
+import Highlighter from "src/presentation/components/common/highlighter/highlighter";
 
 const LETTERS = [
-  { credito: "R$ 145.000,00", pagas: 2, parcela: "R$ 925,00" },
-  { credito: "R$ 160.000,00", pagas: 3, parcela: "R$ 1.010,00" },
-  { credito: "R$ 180.000,00", pagas: 3, parcela: "R$ 1.135,00" },
-  { credito: "R$ 200.000,00", pagas: 3, parcela: "R$ 1.210,00" },
-  { credito: "R$ 220.000,00", pagas: 3, parcela: "R$ 1.320,00" },
-  { credito: "R$ 255.000,00", pagas: 1, parcela: "R$ 1.520,00" },
-  { credito: "R$ 300.000,00", pagas: 4, parcela: "R$ 1.840,00" },
-  { credito: "R$ 750.000,00", pagas: 5, parcela: "R$ 4.890,00" },
+  { credito: "R$ 150.000,00", pagas: 2, parcela: "R$ 940,00" },
+  { credito: "R$ 165.000,00", pagas: 3, parcela: "R$ 1.020,00" },
+  { credito: "R$ 185.000,00", pagas: 4, parcela: "R$ 1.145,00" },
+  { credito: "R$ 205.000,00", pagas: 3, parcela: "R$ 1.225,00" },
+  { credito: "R$ 225.000,00", pagas: 4, parcela: "R$ 1.335,00" },
+  { credito: "R$ 260.000,00", pagas: 2, parcela: "R$ 1.540,00" },
+  { credito: "R$ 310.000,00", pagas: 5, parcela: "R$ 1.860,00" },
+  { credito: "R$ 760.000,00", pagas: 6, parcela: "R$ 4.920,00" },
 ];
 
 const whatsappUrl =
-  "https://api.whatsapp.com/send?phone=5519982435337&text=Ol%C3%A1!%20Vim%20do%20site%20da%20Prosp%C3%A9ritt%C3%A9%20Consult%20e%20tenho%20interesse%20em%20fazer%20um%20cons%C3%B3rcio!";
+  "https://api.whatsapp.com/send?phone=5519982435337&text=Ol%C3%A1!%20Vim%20do%20site%20da%20PRIMORA%20Capital%20e%20tenho%20interesse%20em%20fazer%20um%20cons%C3%B3rcio!";
 const ctaUrl =
-  "https://api.whatsapp.com/send?phone=5519982435337&text=Ol%C3%A1!%20Quero%20falar%20com%20um%20especialista%20da%20Prosp%C3%A9ritt%C3%A9%20Consult.";
+  "https://api.whatsapp.com/send?phone=5519982435337&text=Ol%C3%A1!%20Quero%20falar%20com%20um%20especialista%20da%20PRIMORA%20Capital.";
 
 export default function Letters() {
   const [, setIsMobile] = useState(false);
@@ -33,18 +34,23 @@ export default function Letters() {
 
   return (
     <section id="cartas-contempladas" className={styles.lettersSection}>
-      <h2 className={styles.title}>Cartas Contempladas</h2>
+      <h2 className={styles.title}>
+        Cartas{" "}
+        <Highlighter action="underline" color="#eed56d">
+          Contempladas
+        </Highlighter>
+      </h2>
       <p className={styles.subtitle}>
-        Os créditos listados abaixo são provenientes de clientes que já foram
-        contemplados por lance ou sorteio e estão prontos para uso imediato.
+        Confira créditos já contemplados por lance ou sorteio, disponíveis para
+        utilização imediata com segurança e agilidade.
       </p>
       <div className={styles.tableWrapper}>
         <table className={styles.lettersTable}>
           <thead>
             <tr>
-              <th>Crédito</th>
-              <th>Parcelas Pagas</th>
-              <th>Parcelas</th>
+              <th>Valor do Crédito</th>
+              <th>Pagas</th>
+              <th>Parcela Mensal</th>
               <th></th>
             </tr>
           </thead>
@@ -61,7 +67,7 @@ export default function Letters() {
                     rel="noopener noreferrer"
                     className={styles.whatsappBtn}
                   >
-                    Tenho interesse
+                    Saiba mais
                     <IconArrowRight size={16} />
                   </a>
                 </td>
@@ -91,7 +97,7 @@ export default function Letters() {
               rel="noopener noreferrer"
               className={styles.whatsappBtn}
             >
-              Tenho interesse
+              Saiba mais
               <IconArrowRight size={16} />
             </a>
           </div>
@@ -99,7 +105,8 @@ export default function Letters() {
       </div>
       <div className={styles.ctaContainer}>
         <p className={styles.ctaText}>
-          Não encontrou o crédito ideal? Fale com nossos consultores <br /> A
+          Não encontrou o crédito{" "}
+          <Highlighter action="underline" color="#eed56d">ideal</Highlighter>? Fale com nossos consultores <br /> A
           menos taxa com parcelas que cabem no seu bolso!
         </p>
         <a

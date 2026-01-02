@@ -2,7 +2,7 @@
 @import "../../../styles/themes/mixins.scss";
 
 .section {
-  background-color: #f5f6fa;
+  background-color: #fcfcfc;
   width: 100%;
   padding: 5rem 0;
   overflow: hidden;
@@ -62,13 +62,15 @@
       color: #1c1c1c;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform-origin: center bottom;
+      line-height: 1;
 
       &:hover {
         background: #eed56d;
         border-color: #eed56d;
         color: #fff;
         box-shadow: 0 8px 20px rgba(238, 213, 109, 0.4);
-        transform: scale(1.1);
+        transform: scale(1.1) translateY(-2px);
       }
     }
   }
@@ -163,14 +165,13 @@
           }
 
           &:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
-            border-color: rgba(238, 213, 109, 0.3);
+            border-color: rgba(238, 213, 109, 0.2);
+            transform: scale(1.02);
 
             .icon {
-              transform: scale(1.1) rotate(5deg);
+              transform: scale(1.05) rotate(2deg);
               color: #eed56d;
-              background: rgba(238, 213, 109, 0.1);
+              background: rgba(238, 213, 109, 0.08);
             }
           }
 

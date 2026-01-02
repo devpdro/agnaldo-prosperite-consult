@@ -15,13 +15,25 @@ const NavMobile = ({ closeMenu }: NavMobileProps) => {
 
   const handleClick = (link: string) => {
     closeMenu();
-    if (link.startsWith("#")) {
+    if (link.startsWith("#") || link.startsWith("/#")) {
+      const id = link.includes("#")
+        ? link.split("#")[1]
+        : link.replace("#", "");
       if (pathname !== "/") {
-        router.push(`/?scrollTo=${link.replace("#", "")}`);
+        router.push(`/?scrollTo=${id}`);
       } else {
-        const el = document.getElementById(link.replace("#", ""));
+        const el = document.getElementById(id);
         if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
+          const offset = 80;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = el.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
         }
       }
     } else {
@@ -52,7 +64,7 @@ const NavMobile = ({ closeMenu }: NavMobileProps) => {
         </div>
         <aside className={S["right-section"]}>
           <a
-            href="https://api.whatsapp.com/send?phone=5519993273002&text=Ol%C3%A1!%20Vim%20do%20site%20da%20Prosp%C3%A9ritt%C3%A9%20Consult%20e%20tenho%20interesse%20em%20simular%20meu%20cons%C3%B3rcio.%20Poderiam%20me%20ajudar%20a%20encontrar%20a%20melhor%20op%C3%A7%C3%A3o?"
+            href="https://api.whatsapp.com/send?phone=5519993273002&text=Ol%C3%A1!%20Vim%20do%20site%20da%20PRIMORA%20Capital%20e%20tenho%20interesse%20em%20simular%20meu%20cons%C3%B3rcio.%20Poderiam%20me%20ajudar%20a%20encontrar%20a%20melhor%20op%C3%A7%C3%A3o?"
             target="_blank"
             rel="noopener noreferrer"
             className={S.link}

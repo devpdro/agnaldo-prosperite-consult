@@ -53,6 +53,7 @@
     object-fit: contain;
     filter: var(--logo-filter);
     transition: filter 0.3s ease;
+    margin-left: -2.0rem;
   }
 }
 
@@ -157,7 +158,6 @@
 }
 
 .cta-link {
-  margin-left: 2rem;
   text-decoration: none;
 
   @media (max-width: 1124px) {
@@ -173,7 +173,7 @@
   @include display-flex(center, center);
   font-size: 0.95rem;
   font-family: "Playfair Display", serif;
-  font-weight: 600;
+  font-weight: 500;
   gap: 0.5rem;
   /* Visual styles handled by button.module.scss (.btn2) but ensured here */
   transition: all 0.3s ease;

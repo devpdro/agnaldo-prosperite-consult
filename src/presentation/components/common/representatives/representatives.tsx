@@ -3,6 +3,8 @@
 import AutoScroll from "embla-carousel-auto-scroll";
 import { IMAGE } from "src/presentation/assets";
 import { Carousel, CarouselContent, CarouselItem } from "../carousel/carousel";
+import Highlighter from "src/presentation/components/common/highlighter/highlighter";
+import Image from "next/image";
 
 import styles from "./representatives.module.scss";
 
@@ -17,7 +19,15 @@ const LOGOS = [
 export default function Representatives() {
   return (
     <section className={styles.representativesSection}>
-      <h3 className={styles.title}>REPRESENTANTE AUTORIZADA:</h3>
+      <h3 className={styles.title}>
+        REPRESENTANTE{" "}
+        <span style={{ color: "#eed56d" }}>
+          <Highlighter action="underline" color="#eed56d">
+            AUTORIZADA
+          </Highlighter>
+        </span>
+        :
+      </h3>
 
       <div className={styles.carouselContainer}>
         <Carousel
@@ -36,10 +46,12 @@ export default function Representatives() {
             {[...LOGOS, ...LOGOS, ...LOGOS].map((logo, idx) => (
               <CarouselItem key={idx} className={styles.carouselItem}>
                 <div className={styles.logoWrapper}>
-                  <img
+                  <Image
                     src={logo.src}
                     alt={logo.alt}
                     className={styles.logoImg}
+                    width={180}
+                    height={60}
                   />
                 </div>
               </CarouselItem>

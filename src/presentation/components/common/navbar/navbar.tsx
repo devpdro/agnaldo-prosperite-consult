@@ -38,13 +38,41 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleSmoothScroll = (id: string) => (e: React.MouseEvent) => {
-    const isHome = pathname === "/";
-    if (isHome) {
-      e.preventDefault();
-      const el = document.getElementById(id.replace("#", ""));
+  useEffect(() => {
+    const params = new URLSearchParams(
+      typeof window !== "undefined" ? window.location.search : ""
+    );
+    const target = params.get("scrollTo");
+    if (pathname === "/" && target) {
+      const el = document.getElementById(target);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = el.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+      }
+    }
+  }, [pathname]);
+
+  const handleSmoothScroll = (href: string) => (e: React.MouseEvent) => {
+    const isHome = pathname === "/";
+    if (isHome && href.includes("#")) {
+      e.preventDefault();
+      const id = href.split("#")[1];
+      const el = document.getElementById(id);
+      if (el) {
+        const offset = 80; // height of the navbar (5rem approx)
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = el.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
       }
     }
   };
@@ -66,9 +94,10 @@ const Navbar = () => {
         <div className={S["nav-items"]}>
           {MENU.map((item, key) => (
             <div key={key} className={S["nav-link"]}>
-              {item.link && item.link.startsWith("#") ? (
+              {item.link &&
+              (item.link.startsWith("#") || item.link.startsWith("/#")) ? (
                 <a
-                  href={pathname === "/" ? item.link : `/${item.link}`}
+                  href={item.link}
                   className={S["link-text"]}
                   onClick={handleSmoothScroll(item.link)}
                 >
@@ -106,7 +135,7 @@ const Navbar = () => {
             </div>
           ))}
           <a
-            href="https://api.whatsapp.com/send?phone=5519982435337&text=Ol%C3%A1!%20Vim%20do%20site%20da%20Prosp%C3%A9ritt%C3%A9%20Consult%20e%20tenho%20interesse%20em%20simular%20meu%20cons%C3%B3rcio.%20Poderiam%20me%20ajudar%20a%20encontrar%20a%20melhor%20op%C3%A7%C3%A3o?"
+            href="https://api.whatsapp.com/send?phone=5519982435337&text=Ol%C3%A1!%20Vim%20do%20site%20da%20PRIMORA%20Capital%20e%20tenho%20interesse%20em%20simular%20meu%20cons%C3%B3rcio.%20Poderiam%20me%20ajudar%20a%20encontrar%20a%20melhor%20op%C3%A7%C3%A3o?"
             target="_blank"
             rel="noopener noreferrer"
             className={S["cta-link"]}

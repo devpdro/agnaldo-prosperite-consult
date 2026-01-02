@@ -22,9 +22,11 @@ import QUATRO_VEICULOS_NOVOS_HYNDAI from "./4_VEICULOS_NOVOS_HYNDAI.webp";
 import IMPOSTO_COMPRA_CARRO from "./IMPOSTO_COMPRA_CARRO.webp";
 import EQUIPE from "./EQUIPE.jpg";
 import LOGO_BRANCO from "./LOGO_BRANCO.png";
+import AGNALDO from "./AGNALDO.png";
 
 const IMAGE = {
-  FOUNDER: EQUIPE, // Placeholder using EQUIPE image until explicit Founder image is provided
+  FOUNDER: EQUIPE,
+  AGNALDO,
   LOGO_BRANCO,
   EQUIPE,
   QUATRO_VEICULOS_NOVOS_HYNDAI,

@@ -5,6 +5,7 @@ import { IMaskInput } from "react-imask";
 import { useState } from "react";
 
 import { Button } from "src/presentation/components";
+import { Highlighter } from "src/presentation/components/common/highlighter/highlighter";
 
 import S from "./loan-request.module.scss";
 
@@ -62,7 +63,8 @@ const LoanRequest = () => {
       <form onSubmit={handleSubmit(onSubmit)} className={S.form}>
         <fieldset>
           <legend className={S.title}>
-            Realize seu sonho com inteligência. <br />
+            Realize seu sonho com{" "}
+            <Highlighter action="underline">inteligência</Highlighter>. <br />
             Simule agora seu consórcio.
           </legend>
 
@@ -123,7 +125,7 @@ const LoanRequest = () => {
             {...register("valor", {
               required: "Valor é obrigatório",
               validate: (value) =>
-                Number(value) >= 80000 || "O valor mínimo é R$ 80.000,00",
+                Number(value) >= 2000000 || "O valor mínimo é R$ 20.000,00",
               onChange: (e) => {
                 const raw = e.target.value;
                 const formatted = formatCurrency(raw);
@@ -133,7 +135,7 @@ const LoanRequest = () => {
               },
             })}
           />
-          <span className={S.valueMin}>Valor mínimo: R$ 80.000,00</span>
+          <span className={S.valueMin}>Valor mínimo: R$ 20.000,00</span>
 
           <input
             {...register("nome", {

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Highlighter from "src/presentation/components/common/highlighter/highlighter";
 
 import S from "./faq.module.scss";
 
@@ -72,8 +73,6 @@ const FAQ: React.FC<FAQProps> = ({
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
   const toggleItem = (id: string) => {
-    const isCurrentlyOpen = openItems.has(id);
-
     setOpenItems((prev) => {
       const newSet = new Set(prev);
       if (newSet.has(id)) {
@@ -83,24 +82,13 @@ const FAQ: React.FC<FAQProps> = ({
       }
       return newSet;
     });
-
-    // Scroll suave para a pergunta apenas quando estiver abrindo
-    if (!isCurrentlyOpen) {
-      setTimeout(() => {
-        const element = document.getElementById(`faq-item-${id}`);
-        if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-            inline: "nearest",
-          });
-        }
-      }, 100);
-    }
   };
 
   return (
-    <section className={`${S.section} ${className || ""}`}>
+    <section
+      id="perguntas-frequentes"
+      className={`${S.section} ${className || ""}`}
+    >
       <div className={S.container}>
         <motion.div
           className={S.content}
@@ -117,7 +105,26 @@ const FAQ: React.FC<FAQProps> = ({
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           >
-            {title}
+            {(() => {
+              const t = title || "";
+              const target = "frequentes";
+              const idx = t.toLowerCase().indexOf(target);
+              if (idx >= 0) {
+                const prefix = t.slice(0, idx);
+                const highlighted = t.slice(idx, idx + target.length);
+                const suffix = t.slice(idx + target.length);
+                return (
+                  <>
+                    {prefix}
+                    <Highlighter action="underline" color="#eed56d">
+                      {highlighted}
+                    </Highlighter>
+                    {suffix}
+                  </>
+                );
+              }
+              return t;
+            })()}
           </motion.h2>
 
           <motion.div
@@ -160,7 +167,7 @@ const FAQ: React.FC<FAQProps> = ({
                       className={`${S.icon} ${isOpen ? S.iconOpen : ""}`}
                       animate={{
                         rotate: isOpen ? 45 : 0,
-                        color: themeColor ? themeColor : "#264f85",
+                        color: themeColor ? themeColor : "#D4BC5B",
                         scale: isOpen ? 1.1 : 1,
                       }}
                       transition={{

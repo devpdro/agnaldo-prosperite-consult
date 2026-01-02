@@ -12,43 +12,81 @@ import {
 } from "@tabler/icons-react";
 
 import styles from "./benefits.module.scss";
+import { Highlighter } from "src/presentation/components";
 
 const BENEFITS = [
   {
     id: 1,
-    icon: <IconShieldCheck size={36} stroke={1.7} />,
-    title: "Segurança e Credibilidade",
-    desc: "Empresa autorizada e fiscalizada pelo Banco Central. Seu dinheiro está 100% protegido.",
+    icon: <IconFileCertificate size={36} stroke={1.7} />,
+    title: "Segurança regulatória",
+    desc: (
+      <>
+        Parceria com administradoras autorizadas e fiscalizadas pelo Banco
+        Central. Recursos{" "}
+        <Highlighter action="underline">protegidos</Highlighter> e conformidade
+        garantida.
+      </>
+    ),
   },
   {
     id: 2,
     icon: <IconPigMoney size={36} stroke={1.7} />,
-    title: "Sem Juros, Sem Entrada",
-    desc: "Planeje seu futuro sem pagar juros abusivos. Aqui, você investe no que é seu.",
+    title: "Sem juros, sem entrada",
+    desc: (
+      <>
+        Condição especial com{" "}
+        <Highlighter action="underline">sem juros</Highlighter> e sem entrada,
+        com parcelas que cabem no seu bolso.
+      </>
+    ),
   },
   {
     id: 3,
     icon: <IconTrendingUp size={36} stroke={1.7} />,
-    title: "Planos Flexíveis",
-    desc: "Diversas opções de créditos, parcelas que cabem no seu bolso e prazos sob medida.",
+    title: "Estratégia personalizada",
+    desc: (
+      <>
+        Plano construído de acordo com seu perfil, metas e orçamento, com
+        estratégia totalmente{" "}
+        <Highlighter action="underline">personalizada</Highlighter>.
+      </>
+    ),
   },
   {
     id: 4,
-    icon: <IconFileCertificate size={36} stroke={1.7} />,
-    title: "Atendimento Especializado",
-    desc: "Consultores prontos para te ajudar a escolher o melhor plano, de forma transparente e humanizada.",
+    icon: <IconGift size={36} stroke={1.7} />,
+    title: "Contemplação estratégica",
+    desc: (
+      <>
+        Método exclusivo para{" "}
+        <Highlighter action="underline">acelerar</Highlighter> sua contemplação
+        com orientação prática e clara.
+      </>
+    ),
   },
   {
     id: 5,
-    icon: <IconGift size={36} stroke={1.7} />,
-    title: "Contemplação Acelerada",
-    desc: "Aumente suas chances com lances livres, lances fixos e sorteios mensais.",
+    icon: <IconShieldCheck size={36} stroke={1.7} />,
+    title: "100% digital e ágil",
+    desc: (
+      <>
+        Processos totalmente{" "}
+        <Highlighter action="underline">100% online</Highlighter> e
+        descomplicados. Contratação simples e acompanhamento direto.
+      </>
+    ),
   },
   {
     id: 6,
     icon: <IconUsersGroup size={36} stroke={1.7} />,
-    title: "Sem Burocracia",
-    desc: "Faça tudo 100% online, com agilidade na contratação e acompanhamento da sua cota.",
+    title: "Atendimento dedicado",
+    desc: (
+      <>
+        Acompanhamento especializado e{" "}
+        <Highlighter action="underline">dedicado</Highlighter>, com foco em
+        clareza e decisões objetivas em cada etapa.
+      </>
+    ),
   },
 ];
 
@@ -63,9 +101,8 @@ const Benefits = () => {
       <div className={styles.container}>
         <div className={styles.head}>
           <h2 className={styles.title}>
-            Por que fazer consórcio com a{" "}
-            <span className={styles.highlight}>Prospéritté</span>
-            <span className={styles.highlightItalic}> Consult?</span>
+            Por que escolher a{" "}
+            <Highlighter action="underline">Primora</Highlighter> Capital
           </h2>
           <div className={styles.controls}>
             <button

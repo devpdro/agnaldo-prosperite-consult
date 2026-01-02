@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1380px;
   margin: 0 auto;
-  padding: 6rem 2rem;
+  padding: 4.5rem 2rem;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -53,8 +53,8 @@
   overflow: hidden;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   }
 }
 
@@ -147,7 +147,7 @@
 .ctaBtn {
   background: #eed56d;
   color: #fff;
-  font-weight: 600;
+  font-weight: 500;
   border: none;
   border-radius: 50px;
   padding: 14px 40px;
@@ -177,7 +177,7 @@
 
 @media (max-width: 900px) {
   .achievementSection {
-    padding: 4rem 1rem;
+    padding: 3.5rem 1rem;
   }
 
   .sectionTitle {

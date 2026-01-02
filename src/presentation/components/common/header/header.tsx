@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { StaticImageData } from "next/image";
 
 import { LoanRequest } from "src/presentation/components/form";
@@ -6,7 +7,7 @@ import S from "./header.module.scss";
 
 type HeaderProps = {
   title: string;
-  subtitle: string;
+  subtitle: string | ReactNode;
   paragraph: string;
   image: string | StaticImageData;
   showLoanRequest?: boolean;

@@ -7,12 +7,13 @@ import {
   IconTrophy,
 } from "@tabler/icons-react";
 import styles from "./steps.module.scss";
+import Highlighter from "src/presentation/components/common/highlighter/highlighter";
 
 const STEPS = [
   {
     id: 1,
     icon: <IconSun size={32} />,
-    title: "1 - Simulação e Planejamento",
+    title: "1 - Simulação",
     description:
       "Defina o valor da carta de crédito e o prazo ideal para o seu bolso. Simule online e encontre o plano perfeito para você.",
     large: true,
@@ -20,7 +21,7 @@ const STEPS = [
   {
     id: 2,
     icon: <IconFileText size={32} />,
-    title: "2 - Contratação Digital",
+    title: "2 - Contratação",
     description:
       "Assine o contrato digitalmente de forma 100% segura, rápida e sem burocracia desnecessária.",
     large: false,
@@ -28,7 +29,7 @@ const STEPS = [
   {
     id: 3,
     icon: <IconCalendarEvent size={32} />,
-    title: "3 - Lances e Sorteios",
+    title: "3 - Lances",
     description:
       "Participe das assembleias mensais, acompanhe os sorteios e oferte lances para antecipar sua conquista.",
     large: false,
@@ -36,7 +37,7 @@ const STEPS = [
   {
     id: 4,
     icon: <IconTrophy size={32} />,
-    title: "4 - Conquiste seu Sonho",
+    title: "4 - Conquista",
     description:
       "Ao ser contemplado, use sua carta de crédito para adquirir seu bem, quitar financiamentos ou investir no seu futuro.",
     large: true,
@@ -49,10 +50,18 @@ export default function Steps() {
       <div className={styles.container}>
         <div className={styles.header}>
           <span className={styles.badge}>Passo a Passo</span>
-          <h2 className={styles.title}>Como funciona o consórcio?</h2>
-          <p className={styles.subtitle}>
-            Entenda como é simples conquistar seu objetivo com a Prospéritté
-            Consult. Processo simplificado em 4 etapas.
+          <h2 className={styles.sectionTitle}>
+            Como funciona para você{" "}
+            <Highlighter action="underline" color="#eed56d">
+              conquistar
+            </Highlighter>{" "}
+            seus objetivos
+          </h2>
+          <p className={styles.sectionSubtitle}>
+            Descubra um caminho simples e inteligente para acessar seu crédito
+            sem juros e sem entrada. Em poucos passos, você planeja, participa e
+            acelera sua contemplação. Simule agora e veja parcelas que cabem no
+            seu bolso. Comece hoje e transforme suas metas em conquistas.
           </p>
         </div>
 

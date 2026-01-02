@@ -32,7 +32,7 @@ const CONTACTS = [
     desc: "Prefere agilidade? Fale com nossos especialistas direto pelo WhatsApp.",
     button: "Falar no WhatsApp",
     action:
-      "https://api.whatsapp.com/send?phone=5519982435337&text=Ol%C3%A1!%20Quero%20falar%20com%20um%20especialista%20da%20Prosp%C3%A9ritt%C3%A9%20Consult.",
+      "https://api.whatsapp.com/send?phone=5519982435337&text=Ol%C3%A1!%20Quero%20falar%20com%20um%20especialista%20da%20PRIMORA%20Capital.",
     type: "primary",
   },
 ];
