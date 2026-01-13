@@ -20,6 +20,6 @@ export const ICONS: IconProps[] = [
   },
   {
     icon: IconBrandWhatsapp,
-    link: 'https://api.whatsapp.com/send?phone=5519993273002&text=Ol%C3%A1!%20Vim%20do%20site%20da%20PRIMORA%20Capital%20e%20gostaria%20de%20saber%20mais%20informações!',
+    link: 'https://api.whatsapp.com/send?phone=5519982435337&text=Ol%C3%A1!%20Vim%20do%20site%20da%20PRIMORA%20Capital%20e%20gostaria%20de%20saber%20mais%20informações!',
   },
 ]

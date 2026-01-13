@@ -18,12 +18,20 @@
     --nav-hover: #d4bc5b;
   }
 
+  &.fixed-blue {
+    --nav-bg: #100f30;
+    --nav-text: #ffffff;
+    --nav-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --logo-filter: none;
+    --nav-hover: #eed56d;
+  }
+
   box-shadow: var(--nav-shadow);
   position: fixed;
   background-color: var(--nav-bg);
   font-family: "Playfair Display", serif;
   font-weight: $weight-default;
-  height: 5rem; /* Increased slightly for premium feel */
+  height: 5.5rem;
   z-index: 999;
   width: 100%;
   transition: all 0.3s ease;
@@ -48,8 +56,8 @@
   height: 100%;
 
   .logo {
-    width: 200px;
-    height: 200px;
+    width: 225px;
+    height: 225px;
     object-fit: contain;
     filter: var(--logo-filter);
     transition: filter 0.3s ease;
@@ -158,8 +166,6 @@
 }
 
 .cta-link {
-  text-decoration: none;
-
   @media (max-width: 1124px) {
     display: none;
   }
@@ -167,16 +173,6 @@
   @media (min-width: 1264px) {
     display: flex;
   }
-}
-
-.cta-button {
-  @include display-flex(center, center);
-  font-size: 0.95rem;
-  font-family: "Playfair Display", serif;
-  font-weight: 500;
-  gap: 0.5rem;
-  /* Visual styles handled by button.module.scss (.btn2) but ensured here */
-  transition: all 0.3s ease;
 }
 
 .menu-icon {

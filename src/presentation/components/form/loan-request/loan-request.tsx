@@ -4,8 +4,8 @@ import { useForm, Controller } from "react-hook-form";
 import { IMaskInput } from "react-imask";
 import { useState } from "react";
 
-import { Button } from "src/presentation/components";
-import { Highlighter } from "src/presentation/components/common/highlighter/highlighter";
+import { SimulateButton } from "src/presentation/components";
+import Highlighter from "src/presentation/components/common/highlighter/highlighter";
 
 import S from "./loan-request.module.scss";
 
@@ -48,14 +48,34 @@ const LoanRequest = () => {
 
   const [valorFormatado, setValorFormatado] = useState("");
 
-  const onSubmit = () => {
-    const phone = "5519982435337";
-    const msg = encodeURIComponent(
-      "Olá! Tenho interesse em simular um consórcio e gostaria de receber mais informações. Pode me ajudar a conquistar meu objetivo?"
-    );
-    window.open(`https://wa.me/${phone}?text=${msg}`);
-    reset();
-    setValorFormatado("");
+  const onSubmit = async (data: LoanRequestProps) => {
+    try {
+      // Enviar email
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao enviar email");
+      }
+
+      // Abrir WhatsApp após envio do email
+      const phone = "5519982435337";
+      const msg = encodeURIComponent(
+        "Olá! Tenho interesse em simular um consórcio e gostaria de receber mais informações. Pode me ajudar a conquistar meu objetivo?"
+      );
+      window.open(`https://wa.me/${phone}?text=${msg}`);
+      
+      reset();
+      setValorFormatado("");
+    } catch (error) {
+      console.error("Erro ao processar formulário:", error);
+      alert("Erro ao enviar dados. Tente novamente.");
+    }
   };
 
   return (
@@ -63,15 +83,16 @@ const LoanRequest = () => {
       <form onSubmit={handleSubmit(onSubmit)} className={S.form}>
         <fieldset>
           <legend className={S.title}>
-            Realize seu sonho com{" "}
-            <Highlighter action="underline">inteligência</Highlighter>. <br />
-            Simule agora seu consórcio.
+            Planeje sua conquista com{" "}
+            <Highlighter action="underline">inteligência financeira</Highlighter>.
           </legend>
 
           <p className={S.paragraphSubtitle}>
-            Esse é o momento certo para tirar seus planos do papel. Com os
-            financiamentos mais caros, o consórcio se destaca como a alternativa
-            econômica e estratégica para conquistar o que você quer.
+            Simule seu consórcio e descubra o caminho mais estratégico para
+            alcançar seu objetivo. O consórcio pode ser uma alternativa mais
+            econômica e planejada ao financiamento tradicional. Aqui, você
+            simula, compara cenários e entende qual estratégia faz sentido para
+            o seu momento.
           </p>
 
           <select
@@ -115,27 +136,35 @@ const LoanRequest = () => {
             </option>
           </select>
 
-          <input
-            inputMode="numeric"
-            placeholder="Digite o valor"
-            value={valorFormatado}
-            className={`${S["input-text"]} ${
-              errors.valor ? S["input-text-error"] : ""
-            }`}
-            {...register("valor", {
+          <Controller
+            name="valor"
+            control={control}
+            rules={{
               required: "Valor é obrigatório",
-              validate: (value) =>
-                Number(value) >= 2000000 || "O valor mínimo é R$ 20.000,00",
-              onChange: (e) => {
-                const raw = e.target.value;
-                const formatted = formatCurrency(raw);
-                setValorFormatado(formatted);
-                const numericOnly = raw.replace(/\D/g, "");
-                setValue("valor", numericOnly);
+              validate: (value) => {
+                const numValue = Number(value);
+                return numValue >= 5000000 || "O valor mínimo é R$ 50.000,00";
               },
-            })}
+            }}
+            render={({ field: { onChange } }) => (
+              <input
+                inputMode="numeric"
+                placeholder="Digite o valor"
+                value={valorFormatado}
+                className={`${S["input-text"]} ${
+                  errors.valor ? S["input-text-error"] : ""
+                }`}
+                onChange={(e) => {
+                  const raw = e.target.value;
+                  const formatted = formatCurrency(raw);
+                  setValorFormatado(formatted);
+                  const numericOnly = raw.replace(/\D/g, "");
+                  onChange(numericOnly);
+                }}
+              />
+            )}
           />
-          <span className={S.valueMin}>Valor mínimo: R$ 20.000,00</span>
+          <span className={S.valueMin}>Valor mínimo: R$ 50.000,00</span>
 
           <input
             {...register("nome", {
@@ -192,11 +221,7 @@ const LoanRequest = () => {
             )}
           />
 
-          <Button
-            typeStyle="btn2"
-            width="100%"
-            label={isSubmitting ? "Simulando..." : "Simular agora"}
-          />
+          <SimulateButton type="submit" style={{ width: "100%" }} />
         </fieldset>
       </form>
     </div>

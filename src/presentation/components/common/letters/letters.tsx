@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-import { IconArrowRight } from "@tabler/icons-react";
 import styles from "./letters.module.scss";
 import Highlighter from "src/presentation/components/common/highlighter/highlighter";
+import { SimulateButton } from "src/presentation/components";
 
 const LETTERS = [
   { credito: "R$ 150.000,00", pagas: 2, parcela: "R$ 940,00" },
@@ -61,15 +61,11 @@ export default function Letters() {
                 <td>{item.pagas}</td>
                 <td>{item.parcela}</td>
                 <td>
-                  <a
+                  <SimulateButton
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={styles.whatsappBtn}
-                  >
-                    Saiba mais
-                    <IconArrowRight size={16} />
-                  </a>
+                  />
                 </td>
               </tr>
             ))}
@@ -91,15 +87,11 @@ export default function Letters() {
                 {item.pagas > 1 ? "s" : ""}
               </div>
             </div>
-            <a
+            <SimulateButton
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.whatsappBtn}
-            >
-              Saiba mais
-              <IconArrowRight size={16} />
-            </a>
+            />
           </div>
         ))}
       </div>
@@ -109,14 +101,11 @@ export default function Letters() {
           <Highlighter action="underline" color="#eed56d">ideal</Highlighter>? Fale com nossos consultores <br /> A
           menos taxa com parcelas que cabem no seu bolso!
         </p>
-        <a
+        <SimulateButton
           href={ctaUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={styles.ctaBtn}
-        >
-          FALE CONOSCO
-        </a>
+        />
       </div>
     </section>
   );

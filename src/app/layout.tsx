@@ -6,14 +6,13 @@ import "src/presentation/styles/global.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title:
-    "Prospéritté Consult | Consórcio digital que cabe no seu plano de vida",
+  title: "PRIMORA Capital",
   description:
-    "Realize seus sonhos com a Prospéritté Consult, especialista em consórcios. Simule seu consórcio de forma rápida, segura e sem burocracia. Planeje seu futuro com as melhores condições do mercado!",
+    "Realize seus sonhos com a PRIMORA Capital, especialista em consórcios. Simule seu consórcio de forma rápida, segura e sem burocracia. Planeje seu futuro com as melhores condições do mercado!",
   keywords: [
     "consórcio",
     "simulação de consórcio",
-    "Prospéritté Consult",
+    "PRIMORA Capital",
     "consórcio imobiliário",
     "consórcio de veículos",
     "consórcio online",
@@ -22,11 +21,13 @@ export const metadata: Metadata = {
     "sem juros",
     "carta de crédito",
   ],
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
-    title:
-      "Prospéritté Consult | Consórcio digital que cabe no seu plano de vida",
+    title: "PRIMORA Capital",
     description:
-      "Realize seus sonhos com a Prospéritté Consult, especialista em consórcios. Simule seu consórcio de forma rápida, segura e sem burocracia. Planeje seu futuro com as melhores condições do mercado!",
+      "Realize seus sonhos com a PRIMORA Capital, especialista em consórcios. Simule seu consórcio de forma rápida, segura e sem burocracia. Planeje seu futuro com as melhores condições do mercado!",
     type: "website",
     locale: "pt_BR",
   },

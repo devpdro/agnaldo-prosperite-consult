@@ -12,7 +12,7 @@ import {
 } from "@tabler/icons-react";
 
 import styles from "./benefits.module.scss";
-import { Highlighter } from "src/presentation/components";
+import Highlighter from "src/presentation/components/common/highlighter/highlighter";
 
 const BENEFITS = [
   {

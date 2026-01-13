@@ -12,13 +12,13 @@ interface HighlighterProps {
   animationDuration?: number;
 }
 
-export function Highlighter({
+const Highlighter = ({
   children,
   action = "highlight",
   color = "#FFD700",
   className = "",
   animationDuration = 1000,
-}: HighlighterProps) {
+}: HighlighterProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
@@ -78,6 +78,6 @@ export function Highlighter({
       />
     </span>
   );
-}
+};
 
 export default Highlighter;

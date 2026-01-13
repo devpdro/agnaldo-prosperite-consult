@@ -12,7 +12,7 @@ import Highlighter from "src/presentation/components/common/highlighter/highligh
 const STEPS = [
   {
     id: 1,
-    icon: <IconSun size={32} />,
+    icon: <IconSun size={40} />,
     title: "1 - Simulação",
     description:
       "Defina o valor da carta de crédito e o prazo ideal para o seu bolso. Simule online e encontre o plano perfeito para você.",
@@ -20,7 +20,7 @@ const STEPS = [
   },
   {
     id: 2,
-    icon: <IconFileText size={32} />,
+    icon: <IconFileText size={40} />,
     title: "2 - Contratação",
     description:
       "Assine o contrato digitalmente de forma 100% segura, rápida e sem burocracia desnecessária.",
@@ -28,7 +28,7 @@ const STEPS = [
   },
   {
     id: 3,
-    icon: <IconCalendarEvent size={32} />,
+    icon: <IconCalendarEvent size={40} />,
     title: "3 - Lances",
     description:
       "Participe das assembleias mensais, acompanhe os sorteios e oferte lances para antecipar sua conquista.",
@@ -36,7 +36,7 @@ const STEPS = [
   },
   {
     id: 4,
-    icon: <IconTrophy size={32} />,
+    icon: <IconTrophy size={40} />,
     title: "4 - Conquista",
     description:
       "Ao ser contemplado, use sua carta de crédito para adquirir seu bem, quitar financiamentos ou investir no seu futuro.",
@@ -58,10 +58,10 @@ export default function Steps() {
             seus objetivos
           </h2>
           <p className={styles.sectionSubtitle}>
-            Descubra um caminho simples e inteligente para acessar seu crédito
-            sem juros e sem entrada. Em poucos passos, você planeja, participa e
-            acelera sua contemplação. Simule agora e veja parcelas que cabem no
-            seu bolso. Comece hoje e transforme suas metas em conquistas.
+            Um caminho simples e estratégico para acessar crédito sem juros. Em
+            poucos passos, você planeja, participa do grupo e pode acelerar sua
+            contemplação de forma inteligente. Simule agora e descubra parcelas
+            que cabem no seu bolso.
           </p>
         </div>
 

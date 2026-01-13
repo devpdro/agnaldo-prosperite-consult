@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <div>
       <Meta
-        title="PRIMORA Capital | Consórcio digital que cabe no seu plano de vida"
+        title="PRIMORA Capital"
         description="Realize seus sonhos com a PRIMORA Capital, especialista em consórcios. Simule seu consórcio de forma rápida, segura e sem burocracia. Planeje seu futuro com as melhores condições do mercado!"
         keywords="consórcio, simulação de consórcio, PRIMORA Capital, consórcio imobiliário, consórcio de veículos, consórcio online, planejamento financeiro, segurança, sem juros, carta de crédito"
       />
@@ -40,7 +40,7 @@ const Home = () => {
           </>
         }
         paragraph="*Aqui seu consórcio é simples, rápido e sem burocracia"
-        image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+        image="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=2070&auto=format&fit=crop"
       />
 
       <Steps />

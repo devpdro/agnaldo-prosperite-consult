@@ -5,6 +5,7 @@ import { IconHome, IconCar, IconTools, IconTruck } from "@tabler/icons-react";
 import S from "./achievement.module.scss";
 import Image from "next/image";
 import Highlighter from "src/presentation/components/common/highlighter/highlighter";
+import { SimulateButton } from "src/presentation/components";
 
 const cards = [
   {
@@ -88,14 +89,11 @@ const Achievement = () => {
           </Highlighter>
           ?
         </p>
-        <a
+        <SimulateButton
           href={ctaUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={S.ctaBtn}
-        >
-          SIMULAR AGORA
-        </a>
+        />
       </div>
     </section>
   );

@@ -6,16 +6,15 @@ import { useState, useEffect } from "react";
 import {
   IconMenu2,
   IconChevronDown,
-  IconBrandWhatsapp,
 } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
 
 import { NavMobile } from "src/presentation/components";
 import { IMAGE } from "src/presentation/assets";
 import { MENU } from "src/data/ui";
+import SimulateButton from "../simulate-button/simulate-button";
 
 import S from "./navbar.module.scss";
-import buttonStyles from "../../form/button/button.module.scss";
 
 interface MenuItem {
   label: string;
@@ -25,18 +24,8 @@ interface MenuItem {
 
 const Navbar = () => {
   const [isSideMenuOpen, setSideMenu] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const pathname = usePathname();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(
@@ -78,13 +67,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`${S.navbar} ${isScrolled ? S.scrolled : ""}`}>
+    <nav className={`${S.navbar} ${S["fixed-blue"]}`}>
       <div className={S.container}>
         <section className={S["left-section"]}>
           <Link href="/">
             <Image
-              src={IMAGE.LOGO}
-              alt="Logo Prosperitte Consult"
+              src={IMAGE.LOGO_BRANCO}
+              alt="Logo PRIMORA Capital"
               className={S.logo}
             />
           </Link>
@@ -134,20 +123,13 @@ const Navbar = () => {
               )}
             </div>
           ))}
-          <a
-            href="https://api.whatsapp.com/send?phone=5519982435337&text=Ol%C3%A1!%20Vim%20do%20site%20da%20PRIMORA%20Capital%20e%20tenho%20interesse%20em%20simular%20meu%20cons%C3%B3rcio.%20Poderiam%20me%20ajudar%20a%20encontrar%20a%20melhor%20op%C3%A7%C3%A3o?"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={S["cta-link"]}
-          >
-            <button
-              className={`${S["cta-button"]} ${buttonStyles.btn} ${buttonStyles.btn2}`}
-              tabIndex={-1}
-            >
-              <IconBrandWhatsapp size={18} />
-              <span>SIMULAR AGORA</span>
-            </button>
-          </a>
+          <div className={S["cta-link"]}>
+            <SimulateButton
+              href="https://api.whatsapp.com/send?phone=5519982435337&text=Ol%C3%A1!%20Vim%20do%20site%20da%20PRIMORA%20Capital%20e%20tenho%20interesse%20em%20simular%20meu%20cons%C3%B3rcio.%20Poderiam%20me%20ajudar%20a%20encontrar%20a%20melhor%20op%C3%A7%C3%A3o?"
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          </div>
         </div>
 
         <IconMenu2
