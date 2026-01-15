@@ -1,4 +1,4 @@
-@import "../../../styles/themes/light.scss";
+@use "../../../styles/themes/light.scss" as *;
 
 .section {
   width: 100%;

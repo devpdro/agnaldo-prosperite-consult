@@ -6,8 +6,8 @@ const PrivacyPolicy = () => {
     return (
         <div>
             <Meta
-                title="Política de Privacidade | Consórcio Prospéritté Consult"
-                description="Saiba como o Prospéritté Consult protege seus dados pessoais e garante a sua privacidade na contratação de consórcios digitais."
+                title="Política de Privacidade | Consórcio Primora Capital"
+                description="Saiba como a Primora Capital protege seus dados pessoais e garante a sua privacidade na contratação de consórcios digitais."
                 keywords="Política de Privacidade, Consórcio, privacidade, dados pessoais, proteção de dados, consórcio digital, financiamento, aquisição de bens"
             />
             <Navbar />
@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
 
                     <h2>1. APRESENTAÇÃO</h2>
                     <p>
-                        Esta Política de Privacidade tem como objetivo esclarecer como o Prospéritté Consult coleta, utiliza, compartilha e protege os dados pessoais dos seus usuários, em total conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD) e demais legislações aplicáveis.
+                        Esta Política de Privacidade tem como objetivo esclarecer como a Primora Capital coleta, utiliza, compartilha e protege os dados pessoais dos seus usuários, em total conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD) e demais legislações aplicáveis.
                         <br /><br />
                         Ao utilizar nosso site, plataforma ou contratar nossos serviços de consórcio, você declara estar ciente e de acordo com os termos aqui descritos.
                         <br /><br />
@@ -28,9 +28,9 @@ const PrivacyPolicy = () => {
                     <ul>
                         <li><b>Dados Pessoais:</b> Qualquer informação que permita sua identificação direta ou indireta.</li>
                         <li><b>Titular:</b> Pessoa física a quem os dados pessoais se referem.</li>
-                        <li><b>Controladora:</b> Prospéritté Consult, responsável por tomar as decisões sobre o tratamento dos dados.</li>
+                        <li><b>Controladora:</b> Primora Capital, responsável por tomar as decisões sobre o tratamento dos dados.</li>
                         <li><b>Operadora:</b> Empresas parceiras que tratam dados em nosso nome.</li>
-                        <li><b>Encarregado DPO:</b> Profissional que atua como canal de comunicação entre você e o Prospéritté Consult em relação aos seus dados.</li>
+                        <li><b>Encarregado DPO:</b> Profissional que atua como canal de comunicação entre você e a Primora Capital em relação aos seus dados.</li>
                     </ul>
 
                     <h2>3. QUAIS DADOS COLETAMOS</h2>
@@ -111,7 +111,7 @@ const PrivacyPolicy = () => {
 
                     <h2>9. ATENDIMENTO</h2>
                     <ul>
-                        <li>WhatsApp: 19 99327-3002</li>
+                        <li>WhatsApp: 19 99963-2067</li>
                     </ul>
 
                     <h2>10. ALTERAÇÕES NA POLÍTICA</h2>
@@ -121,7 +121,7 @@ const PrivacyPolicy = () => {
                     <p>Esta política é regida pelas leis brasileiras, especialmente a Lei nº 13.709/2018 (LGPD). Fica eleito o foro da comarca de [cidade], salvo outro definido por lei aplicável.</p>
 
                     <p className={styles.privacyFinal}>
-                        Prospéritté Consult — Todos os direitos reservados
+                        Primora Capital — Todos os direitos reservados
                     </p>
                     <p className={styles.privacyVersao}>
                         Versão 1.0 — Atualizada em 27 de maio de 2025

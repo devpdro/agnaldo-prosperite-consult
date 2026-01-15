@@ -24,7 +24,7 @@ const DEFAULT_QUESTIONS: FAQItem[] = [
     id: "1",
     question: "Consórcio demora muito para ser contemplado?",
     answer:
-      "O consórcio é uma ferramenta de planejamento, mas você não precisa depender apenas da sorte. Além dos sorteios mensais, é possível ofertar lances (livres, fixos ou embutidos) para antecipar sua contemplação. Na Prospéritté, desenhamos estratégias personalizadas para aumentar suas chances de acesso ao crédito no menor tempo possível.",
+      "O consórcio é uma ferramenta de planejamento, e a contemplação não depende apenas da sorte. Além dos sorteios mensais, existem diferentes formas de antecipar o acesso ao crédito, como lances livres, fixos ou embutidos.<br/><br/>Na Primora Capital, o consórcio é tratado de forma estratégica. Analisamos seu perfil, objetivo e capacidade financeira para estruturar um plano personalizado, aumentando as chances de contemplação de maneira consciente, organizada e no menor prazo possível — sempre com transparência e sem promessas irreais.",
   },
   {
     id: "2",

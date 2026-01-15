@@ -27,26 +27,31 @@ const Founder = () => (
         </div>
         <div className={S["text-section"]}>
           <h1 className={S.title}>Agnaldo Tomsic</h1>
-          <h3 className={S.subtitle}>CEO</h3>
+          <h3 className={S.subtitle}>CEO – Primora Capital</h3>
           <p className={S.paragraph}>
-            Com mais de uma década em consórcios e soluções financeiras,
-            Agnaldo Tomsic conduz uma operação orientada a resultados, com
-            foco em segurança, ética e clareza na tomada de decisão.
+            Com mais de uma década de experiência em consórcios e soluções financeiras, 
+            Agnaldo Tomsic lidera a Primora Capital com foco em planejamento patrimonial, 
+            segurança e decisões bem orientadas.
           </p>
           <p className={S.paragraph}>
-            Une método e estratégia para destravar objetivos de curto e longo
-            prazo, respeitando o perfil de cada cliente e garantindo processos
-            simples, ágeis e 100% digitais.
+            Sua atuação é marcada por uma abordagem consultiva, que une estratégia, 
+            clareza e respeito ao perfil de cada cliente, ajudando pessoas e empresas 
+            a transformarem objetivos em conquistas reais, sem improviso ou promessas vazias.
           </p>
           <p className={S.paragraph}>
-            A atuação se baseia em transparência, parceria com administradoras
-            autorizadas e acompanhamento dedicado em todas as etapas, para uma
-            experiência superior em consórcio.
+            Ao longo da carreira, construiu métodos próprios para estruturar planos 
+            eficientes de curto, médio e longo prazo, sempre com processos simples, 
+            acompanhamento próximo e operação 100% digital.
           </p>
           <p className={S.paragraph}>
-            Mais do que oferecer produtos, entrega visão estratégica, orientação
-            prática e condições competitivas, para que cada decisão seja segura
-            e gere valor real ao seu patrimônio.
+            A Primora Capital nasce dessa visão: trabalhar apenas com administradoras 
+            autorizadas, atuar com total transparência e oferecer um atendimento dedicado 
+            em todas as etapas, para que cada decisão seja segura, consciente e alinhada 
+            à construção de patrimônio no longo prazo.
+          </p>
+          <p className={S.paragraph}>
+            Mais do que vender consórcios, Agnaldo entrega orientação estratégica, visão 
+            financeira e tranquilidade para quem busca crescer com inteligência.
           </p>
         </div>
       </div>

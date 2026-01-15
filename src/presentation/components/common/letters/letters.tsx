@@ -98,8 +98,9 @@ export default function Letters() {
       <div className={styles.ctaContainer}>
         <p className={styles.ctaText}>
           Não encontrou o crédito{" "}
-          <Highlighter action="underline" color="#eed56d">ideal</Highlighter>? Fale com nossos consultores <br /> A
-          menos taxa com parcelas que cabem no seu bolso!
+          <Highlighter action="underline" color="#eed56d">ideal</Highlighter>?<br />
+          Temos opções de créditos contemplados, para quem precisa avançar sem esperar.<br />
+          Fale com um consultor e encontre a melhor alternativa para o seu momento.
         </p>
         <SimulateButton
           href={ctaUrl}

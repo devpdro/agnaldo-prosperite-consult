@@ -6,9 +6,9 @@ const TermsOfUse = () => {
     return (
         <div>
             <Meta
-                title="Termos de Uso | Consórcio Prospéritté Consult"
-                description="Termos e Condições de Uso da Prospéritté Consult. Conheça as regras para utilização da nossa plataforma de consórcios digitais."
-                keywords="Termos de Uso, Consórcio, Contrato, Prospéritté, consórcio digital, regras de uso, plataforma de consórcio"
+                title="Termos de Uso | Consórcio Primora Capital"
+                description="Termos e Condições de Uso da Primora Capital. Conheça as regras para utilização da nossa plataforma de consórcios digitais."
+                keywords="Termos de Uso, Consórcio, Contrato, Primora Capital, consórcio digital, regras de uso, plataforma de consórcio"
             />
             <Navbar />
             <div className={styles.privacyPolicyContainer}>
@@ -17,14 +17,14 @@ const TermsOfUse = () => {
 
                     <h2>1. ACEITAÇÃO DOS TERMOS</h2>
                     <p>
-                        Ao acessar e utilizar os serviços da plataforma Prospéritté Consult, você concorda integralmente com estes Termos de Uso. Caso não concorde, solicitamos que não utilize nossos serviços.
+                        Ao acessar e utilizar os serviços da plataforma Primora Capital, você concorda integralmente com estes Termos de Uso. Caso não concorde, solicitamos que não utilize nossos serviços.
                         <br /><br />
-                        Estes Termos regem a relação entre você usuário e a Prospéritté Consult, sendo aplicáveis ao uso do site, plataformas, canais de atendimento e quaisquer serviços oferecidos.
+                        Estes Termos regem a relação entre você usuário e a Primora Capital, sendo aplicáveis ao uso do site, plataformas, canais de atendimento e quaisquer serviços oferecidos.
                     </p>
 
                     <h2>2. OBJETO DOS TERMOS</h2>
                     <p>
-                        Estes Termos têm por objeto regular as condições de acesso, uso e contratação dos serviços oferecidos pela Prospéritté Consult, especialmente a intermediação na contratação de cotas de consórcio administradas por instituições parceiras autorizadas pelo Banco Central do Brasil.
+                        Estes Termos têm por objeto regular as condições de acesso, uso e contratação dos serviços oferecidos pela Primora Capital, especialmente a intermediação na contratação de cotas de consórcio administradas por instituições parceiras autorizadas pelo Banco Central do Brasil.
                     </p>
 
                     <h2>3. ELEGIBILIDADE</h2>
@@ -42,14 +42,14 @@ const TermsOfUse = () => {
 
                     <h2>5. SERVIÇOS OFERECIDOS</h2>
                     <p>
-                        A Prospéritté Consult atua como consultora e intermediadora na oferta de consórcios, conectando os interessados às administradoras devidamente autorizadas pelo Banco Central do Brasil.
+                        A Primora Capital atua como consultora e intermediadora na oferta de consórcios, conectando os interessados às administradoras devidamente autorizadas pelo Banco Central do Brasil.
                         <br /><br />
                         Não somos uma instituição financeira nem administradora de consórcios. O contrato formal do consórcio é celebrado diretamente entre o cliente e a administradora parceira.
                     </p>
 
                     <h2>6. LIMITAÇÃO DE RESPONSABILIDADE</h2>
                     <p>
-                        A Prospéritté Consult não se responsabiliza por:
+                        A Primora Capital não se responsabiliza por:
                     </p>
                     <ul>
                         <li>Decisões financeiras tomadas pelos usuários.</li>
@@ -60,7 +60,7 @@ const TermsOfUse = () => {
 
                     <h2>7. PROPRIEDADE INTELECTUAL</h2>
                     <p>
-                        Todos os conteúdos presentes na plataforma — textos, imagens, marcas, logotipos, códigos e materiais — são protegidos por direitos de propriedade intelectual, sendo de titularidade da Prospéritté Consult ou licenciados.
+                        Todos os conteúdos presentes na plataforma — textos, imagens, marcas, logotipos, códigos e materiais — são protegidos por direitos de propriedade intelectual, sendo de titularidade da Primora Capital ou licenciados.
                         <br /><br />
                         É proibida qualquer reprodução, distribuição ou uso não autorizado desses conteúdos.
                     </p>
@@ -77,7 +77,7 @@ const TermsOfUse = () => {
 
                     <h2>10. CANCELAMENTO E ENCERRAMENTO</h2>
                     <p>
-                        Você pode, a qualquer momento, solicitar o cancelamento do uso da plataforma. A Prospéritté Consult também poderá, sem aviso prévio, suspender ou encerrar o acesso em casos de descumprimento destes Termos ou de qualquer legislação vigente.
+                        Você pode, a qualquer momento, solicitar o cancelamento do uso da plataforma. A Primora Capital também poderá, sem aviso prévio, suspender ou encerrar o acesso em casos de descumprimento destes Termos ou de qualquer legislação vigente.
                     </p>
 
                     <h2>11. LEGISLAÇÃO APLICÁVEL E FORO</h2>
@@ -86,7 +86,7 @@ const TermsOfUse = () => {
                     </p>
 
                     <p className={styles.privacyFinal}>
-                        Prospéritté Consult — Todos os direitos reservados
+                        Primora Capital — Todos os direitos reservados
                     </p>
                     <p className={styles.privacyVersao}>
                         Versão 1.0 — Atualizada em 27 de maio de 2025

@@ -17,74 +17,54 @@ import Highlighter from "src/presentation/components/common/highlighter/highligh
 const BENEFITS = [
   {
     id: 1,
-    icon: <IconFileCertificate size={36} stroke={1.7} />,
-    title: "Segurança regulatória",
+    icon: <IconPigMoney size={36} stroke={1.7} />,
+    title: "Sem juros no crédito",
     desc: (
       <>
-        Parceria com administradoras autorizadas e fiscalizadas pelo Banco
-        Central. Recursos{" "}
-        <Highlighter action="underline">protegidos</Highlighter> e conformidade
-        garantida.
+        Consórcio <Highlighter action="underline">sem cobrança de juros</Highlighter>, com parcelas planejadas de acordo com o seu orçamento.
       </>
     ),
   },
   {
     id: 2,
-    icon: <IconPigMoney size={36} stroke={1.7} />,
-    title: "Sem juros, sem entrada",
+    icon: <IconTrendingUp size={36} stroke={1.7} />,
+    title: "Estratégia personalizada",
     desc: (
       <>
-        Condição especial com{" "}
-        <Highlighter action="underline">sem juros</Highlighter> e sem entrada,
-        com parcelas que cabem no seu bolso.
+        Plano construído conforme seu{" "}
+        <Highlighter action="underline">perfil</Highlighter>, seus objetivos e sua realidade financeira.
       </>
     ),
   },
   {
     id: 3,
-    icon: <IconTrendingUp size={36} stroke={1.7} />,
-    title: "Estratégia personalizada",
+    icon: <IconGift size={36} stroke={1.7} />,
+    title: "Planejamento de contemplação",
     desc: (
       <>
-        Plano construído de acordo com seu perfil, metas e orçamento, com
-        estratégia totalmente{" "}
-        <Highlighter action="underline">personalizada</Highlighter>.
+        Orientação estratégica para{" "}
+        <Highlighter action="underline">aumentar suas chances</Highlighter> de contemplação, com clareza e método.
       </>
     ),
   },
   {
     id: 4,
-    icon: <IconGift size={36} stroke={1.7} />,
-    title: "Contemplação estratégica",
+    icon: <IconShieldCheck size={36} stroke={1.7} />,
+    title: "100% digital e ágil",
     desc: (
       <>
-        Método exclusivo para{" "}
-        <Highlighter action="underline">acelerar</Highlighter> sua contemplação
-        com orientação prática e clara.
+        Processos <Highlighter action="underline">online</Highlighter>, simples e transparentes, com contratação descomplicada e acompanhamento próximo.
       </>
     ),
   },
   {
     id: 5,
-    icon: <IconShieldCheck size={36} stroke={1.7} />,
-    title: "100% digital e ágil",
-    desc: (
-      <>
-        Processos totalmente{" "}
-        <Highlighter action="underline">100% online</Highlighter> e
-        descomplicados. Contratação simples e acompanhamento direto.
-      </>
-    ),
-  },
-  {
-    id: 6,
     icon: <IconUsersGroup size={36} stroke={1.7} />,
     title: "Atendimento dedicado",
     desc: (
       <>
-        Acompanhamento especializado e{" "}
-        <Highlighter action="underline">dedicado</Highlighter>, com foco em
-        clareza e decisões objetivas em cada etapa.
+        Acompanhamento próximo e{" "}
+        <Highlighter action="underline">consultivo</Highlighter>, com foco em clareza, segurança e boas decisões em cada etapa.
       </>
     ),
   },

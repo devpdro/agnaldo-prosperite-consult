@@ -1,9 +1,9 @@
-@import '../../../styles/themes/light.scss';
-@import '../../../styles/themes/mixins.scss';
+@use '../../../styles/themes/light.scss' as *;
+@use '../../../styles/themes/mixins.scss' as *;
 
 .rateSection {
     position: relative;
-    width: 100vw;
+    width: 100%;
     min-height: 320px;
     display: flex;
     align-items: flex-start;
@@ -39,8 +39,8 @@
         align-items: flex-start;
         justify-content: center;
         padding: 2.5rem 4vw 2.5rem 5vw;
-        min-width: 1480px;
         max-width: 1480px;
+        width: 100%;
         text-align: left;
     }
 
@@ -107,6 +107,12 @@
         }
     }
 
+    @media (max-width: 1024px) {
+        .content {
+            padding: 2.5rem 2rem;
+        }
+    }
+
     @media (max-width: 700px) {
         min-height: 380px;
 
@@ -114,9 +120,6 @@
             align-items: center;
             text-align: center;
             justify-content: center;
-
-            min-width: 0;
-            max-width: 100vw;
             padding: 6rem 1rem 4rem 1rem !important;
         }
 
