@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend('re_eU8Sdvzd_41jcoeP4Uk9DorjkUqeutKBy');
+const resend = new Resend("re_eU8Sdvzd_41jcoeP4Uk9DorjkUqeutKBy");
 
 export async function POST(request: Request) {
   try {
@@ -15,30 +15,37 @@ export async function POST(request: Request) {
       currency: "BRL",
     });
 
-    const emailContent = `
-      Nova simulação de consórcio recebida:
-      
-      Nome: ${nome}
-      E-mail: ${email}
-      WhatsApp: ${whatsapp}
-      Tipo de Solicitação: ${tipoSolicitacao}
-      Valor: ${valorFormatado}
-    `;
+    const emailContent = [
+      "Nova simulação de consórcio recebida:",
+      "",
+      `Nome: ${nome}`,
+      `E-mail: ${email}`,
+      `WhatsApp: ${whatsapp}`,
+      `Tipo de Solicitação: ${tipoSolicitacao}`,
+      `Valor: ${valorFormatado}`,
+    ].join("\n");
 
-    const data = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: "Primora Capital <onboarding@resend.dev>",
       to: "euvictorhugopedro@gmail.com",
       subject: "Nova Simulação de Consórcio",
       text: emailContent,
     });
 
+    if (error) {
+      console.error("Erro ao enviar email com Resend:", error);
+      return NextResponse.json(
+        { success: false, error: "Erro ao enviar email" },
+        { status: 500 },
+      );
+    }
+
     return NextResponse.json({ success: true, data }, { status: 200 });
   } catch (error) {
     console.error("Erro ao enviar email:", error);
     return NextResponse.json(
       { success: false, error: "Erro ao enviar email" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
-
