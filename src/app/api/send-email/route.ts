@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend("re_fmy8VrHE_F1DFZUwYadadqmVLFHCT1SxJ");
+const resend = new Resend('re_eU8Sdvzd_41jcoeP4Uk9DorjkUqeutKBy');
 
 export async function POST(request: Request) {
   try {
@@ -26,8 +26,8 @@ export async function POST(request: Request) {
     `;
 
     const data = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "agnaldo.tomsic@primoracapital.com.br",
+      from: "Primora Capital <onboarding@resend.dev>",
+      to: "euvictorhugopedro@gmail.com",
       subject: "Nova Simulação de Consórcio",
       text: emailContent,
     });

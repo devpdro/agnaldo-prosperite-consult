@@ -60,6 +60,7 @@
 
 .faqItemOpen {
   background-color: #ffffff;
+  border-radius: 12px;
 
   .questionText {
     color: #1c1c1c;
@@ -71,7 +72,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0;
+  padding: 2rem 1.5rem;
   background: none;
   border: none;
   cursor: pointer;
@@ -79,8 +80,6 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 8px;
   margin: 0;
-  padding-left: 0;
-  padding-right: 0;
 
   &:hover {
     background-color: transparent;
@@ -96,10 +95,8 @@
   }
 
   @media (max-width: 768px) {
-    padding: 1.5rem 0;
+    padding: 1.5rem 1.25rem;
     margin: 0;
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 
@@ -150,8 +147,7 @@
 }
 
 .answerContent {
-  padding-right: 3rem;
-  padding-bottom: 2rem;
+  padding: 0 3rem 2rem 1.5rem;
 
   p {
     color: #666666;
@@ -182,8 +178,7 @@
   }
 
   @media (max-width: 768px) {
-    padding-right: 0;
-    padding-bottom: 1.5rem;
+    padding: 0 1.25rem 1.5rem 1.25rem;
   }
 }
 

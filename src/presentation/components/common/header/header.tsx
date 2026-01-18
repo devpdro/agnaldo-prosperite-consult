@@ -27,7 +27,7 @@ const Header = ({
       id="faca-uma-simulacao"
       className={S.container}
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(${bgImage})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${bgImage})`,
       }}
     >
       <div className={S["box-section"]}>

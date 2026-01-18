@@ -98,14 +98,21 @@ export default function Letters() {
       <div className={styles.ctaContainer}>
         <p className={styles.ctaText}>
           Não encontrou o crédito{" "}
-          <Highlighter action="underline" color="#eed56d">ideal</Highlighter>?<br />
-          Temos opções de créditos contemplados, para quem precisa avançar sem esperar.<br />
-          Fale com um consultor e encontre a melhor alternativa para o seu momento.
+          <Highlighter action="underline" color="#eed56d">
+            ideal
+          </Highlighter>
+          ?<br />
+          Temos opções de créditos contemplados, para quem precisa avançar sem
+          esperar.
+          <br />
+          Fale com um consultor e encontre a melhor alternativa para o seu
+          momento.
         </p>
         <SimulateButton
           href={ctaUrl}
           target="_blank"
           rel="noopener noreferrer"
+          className={styles.ctaButtonSmall}
         />
       </div>
     </section>
